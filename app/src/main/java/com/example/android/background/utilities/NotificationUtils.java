@@ -89,6 +89,7 @@ public class NotificationUtils {
                 .addAction(ignoreReminderAction(context))
                 .setAutoCancel(true);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
                 && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
