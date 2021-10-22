@@ -15,18 +15,15 @@
  */
 package com.example.android.background.sync;
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 
 import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.JobParameters;
+import com.firebase.jobdispatcher.JobService;
 import com.firebase.jobdispatcher.RetryStrategy;
 
 // COMPLETED (3) WaterReminderFirebaseJobService should extend from JobService
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class WaterReminderFirebaseJobService extends JobService {
 
     private AsyncTask mBackgroundTask;
@@ -62,7 +59,6 @@ public class WaterReminderFirebaseJobService extends JobService {
                 return null;
             }
 
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             protected void onPostExecute(Object o) {
                 // COMPLETED (8) Override onPostExecute and call jobFinished. Pass the job parameters
@@ -102,5 +98,4 @@ public class WaterReminderFirebaseJobService extends JobService {
         if (mBackgroundTask != null) mBackgroundTask.cancel(true);
         return true;
     }
-
 }
